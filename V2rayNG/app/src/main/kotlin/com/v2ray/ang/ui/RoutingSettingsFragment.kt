@@ -103,7 +103,7 @@ class RoutingSettingsFragment : Fragment() {
                         else
                             scanQRCodeForAppend.launch(Intent(activity, ScannerActivity::class.java))
                     else
-                        activity?.toast(R.string.toast_permission_denied)
+                        activity?.toast(getString( R.string.toast_permission_denied))
                 }
 //        }
         return true

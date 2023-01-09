@@ -1,18 +1,27 @@
-<resources>
-    <style name="AppThemeLight" parent="Theme.AppCompat.DayNight.DarkActionBar">
+<resources xmlns:tools="http://schemas.android.com/tools">
+
+    <style name="AppThemeLight" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
         <item name="colorMainBg">@color/colorBg</item>
         <item name="colorMainText">@color/colorText</item>
+
+        <!-- Primary brand color. -->
+        <item name="colorPrimaryVariant">@color/colorPrimary</item>
+        <item name="colorOnPrimary">#000000</item>
+        <!-- Secondary brand color. -->
+        <item name="colorSecondary">#673AB7</item>
+        <item name="colorSecondaryVariant">#4CAF50</item>
+        <item name="colorOnSecondary">#4CAF50</item>
+
+        <!-- Status bar color. -->
+        <item name="android:statusBarColor">?attr/iconTint</item>
+        <!-- Customize your theme here. -->
     </style>
 
     <style name="AppThemeDark" parent="Theme.AppCompat.DayNight.DarkActionBar">
-        <item name="colorPrimary">@color/colorPrimaryByDark</item>
-        <item name="colorPrimaryDark">@color/colorPrimaryDarkByDark</item>
-        <item name="colorAccent">@color/colorAccentByDark</item>
-        <item name="colorMainBg">@color/colorBgByDark</item>
-        <item name="colorMainText">@color/colorTextByDark</item>
+
     </style>
 
     <style name="AppThemeLight_NoActionBar" parent="AppThemeLight">

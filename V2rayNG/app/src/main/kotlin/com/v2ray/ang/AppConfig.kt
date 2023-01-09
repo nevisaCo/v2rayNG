@@ -5,7 +5,7 @@ package com.v2ray.ang
  * App Config Const
  */
 object AppConfig {
-    const val ANG_PACKAGE = "com.v2ray.ang"
+    const val ANG_PACKAGE = BuildConfig.APPLICATION_ID;
     const val DIR_ASSETS = "assets"
 
     // legacy
@@ -43,9 +43,9 @@ object AppConfig {
     const val HTTP_PROTOCOL: String = "http://"
     const val HTTPS_PROTOCOL: String = "https://"
 
-    const val BROADCAST_ACTION_SERVICE = "com.v2ray.ang.action.service"
-    const val BROADCAST_ACTION_ACTIVITY = "com.v2ray.ang.action.activity"
-    const val BROADCAST_ACTION_WIDGET_CLICK = "com.v2ray.ang.action.widget.click"
+    const val BROADCAST_ACTION_SERVICE =  BuildConfig.APPLICATION_ID + ".action.service"
+    const val BROADCAST_ACTION_ACTIVITY = BuildConfig.APPLICATION_ID +".action.activity"
+    const val BROADCAST_ACTION_WIDGET_CLICK =BuildConfig.APPLICATION_ID + ".action.widget.click"
 
     const val TASKER_EXTRA_BUNDLE = "com.twofortyfouram.locale.intent.extra.BUNDLE"
     const val TASKER_EXTRA_STRING_BLURB = "com.twofortyfouram.locale.intent.extra.BLURB"

@@ -2,19 +2,19 @@
 <resources>
     <string name="app_widget_name">Kết nối ngay</string>
     <string name="app_tile_name">Kết nối ngay</string>
-    <string name="app_tile_first_use">Vui lòng thêm một cấu hình vào v2rayNG để sử dụng.</string>
+    <string name="app_tile_first_use">Vui lòng thêm một cấu hình vào VPN để sử dụng.</string>
     <string name="navigation_drawer_open">Mở menu ứng dụng</string>
     <string name="navigation_drawer_close">Đóng menu ứng dụng</string>
     <string name="migration_success">Đã chuyển dữ liệu!</string>
     <string name="migration_fail">Không thể chuyển dữ liệu!</string>
 
     <!-- Notifications -->
-    <string name="notification_action_stop_v2ray">Ngắt kết nối v2rayNG</string>
-    <string name="toast_permission_denied">Vui lòng cấp quyền cần thiết cho v2rayNG. Bạn đã từ chối các quyền cần thiết như Camera hay Bộ nhớ.</string>
+    <string name="notification_action_stop_v2ray">Ngắt kết nối VPN</string>
+    <string name="toast_permission_denied">Vui lòng cấp quyền cần thiết cho VPN. Bạn đã từ chối các quyền cần thiết như Camera hay Bộ nhớ.</string>
     <string name="notification_action_more">Nhấn để biết thêm</string>
-    <string name="toast_services_start">Đang bắt đầu dịch vụ v2rayNG.</string>
-    <string name="toast_services_stop">Đã dừng dịch vụ v2rayNG.</string>
-    <string name="toast_services_success">Đã bắt đầu dịch vụ v2rayNG.</string>
+    <string name="toast_services_start">Đang bắt đầu dịch vụ VPN.</string>
+    <string name="toast_services_stop">Đã dừng dịch vụ VPN.</string>
+    <string name="toast_services_success">Đã bắt đầu dịch vụ VPN.</string>
     <string name="toast_services_failure">Không thể bắt đầu dịch vụ, hãy thử kiểm tra lại cấu hình hoặc khởi động lại thiết bị.</string>
 
     <!--ServerActivity-->
@@ -70,7 +70,7 @@
     <string name="server_lab_content">Nội dung</string>
     <string name="toast_none_data_clipboard">Không có dữ liệu nào trong bộ nhớ tạm thời</string>
     <string name="toast_invalid_url">URL không hợp lệ hoặc không có gì</string>
-    <string name="server_lab_need_inbound">Vui lòng đảm bảo cấu hình tùy chỉnh này không bị lỗi trước khi sử dụng. v2rayNG được Dịch Tiếng Việt bởi CuynuTT😘</string>
+    <string name="server_lab_need_inbound">Vui lòng đảm bảo cấu hình tùy chỉnh này không bị lỗi trước khi sử dụng. VPN được Dịch Tiếng Việt bởi CuynuTT😘</string>
     <string name="toast_malformed_josn">Cấu hình không hợp lệ </string>
     <string name="server_lab_request_host6">Host(SNI)(Bổ sung)</string>
     <string name="toast_asset_copy_failed">Không thể sao chép tệp tin, hãy dùng trình quản lý tệp</string>
@@ -164,7 +164,7 @@
     <string name="title_logcat">Nhật ký hoạt động</string>
     <string name="logcat_copy">Sao chép nhật ký</string>
     <string name="logcat_clear">Xoá nhật ký</string>
-    <string name="title_service_restart">Kết nối lại v2rayNG</string>
+    <string name="title_service_restart">Kết nối lại VPN</string>
     <string name="title_del_all_config">Xoá tất cả cấu hình</string>
     <string name="title_del_invalid_config">Xoá cấu hình lỗi (Kiểm tra trước)</string>
     <string name="title_export_all">Xuất và sao chép tất cả cấu hình</string>

@@ -24,8 +24,18 @@ import kotlinx.coroutines.*
 import java.util.*
 
 class MainViewModel(application: Application) : AndroidViewModel(application) {
-    private val mainStorage by lazy { MMKV.mmkvWithID(MmkvManager.ID_MAIN, MMKV.MULTI_PROCESS_MODE) }
-    private val serverRawStorage by lazy { MMKV.mmkvWithID(MmkvManager.ID_SERVER_RAW, MMKV.MULTI_PROCESS_MODE) }
+    private val mainStorage by lazy {
+        MMKV.mmkvWithID(
+            MmkvManager.ID_MAIN,
+            MMKV.MULTI_PROCESS_MODE
+        )
+    }
+    private val serverRawStorage by lazy {
+        MMKV.mmkvWithID(
+            MmkvManager.ID_SERVER_RAW,
+            MMKV.MULTI_PROCESS_MODE
+        )
+    }
 
     var serverList = MmkvManager.decodeServerList()
     var subscriptionId: String = ""
@@ -40,7 +50,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     fun startListenBroadcast() {
         isRunning.value = false
-        getApplication<AngApplication>().registerReceiver(mMsgReceiver, IntentFilter(AppConfig.BROADCAST_ACTION_ACTIVITY))
+        getApplication<AngApplication>().registerReceiver(
+            mMsgReceiver,
+            IntentFilter(AppConfig.BROADCAST_ACTION_ACTIVITY)
+        )
         MessageUtil.sendMsg2Service(getApplication(), AppConfig.MSG_REGISTER_CLIENT, "")
     }
 
@@ -62,7 +75,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         serverList.remove(guid)
         MmkvManager.removeServer(guid)
         val index = getPosition(guid)
-        if(index >= 0){
+        if (index >= 0) {
             serversCache.removeAt(index)
         }
     }
@@ -75,7 +88,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         val key = MmkvManager.encodeServerConfig("", config)
         serverRawStorage?.encode(key, server)
         serverList.add(key)
-        serversCache.add(ServersCache(key,config))
+        serversCache.add(ServersCache(key, config))
     }
 
     fun swapServer(fromPosition: Int, toPosition: Int) {
@@ -115,7 +128,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                         val testResult = SpeedtestUtil.tcping(serverAddress, serverPort)
                         launch(Dispatchers.Main) {
                             MmkvManager.encodeServerTestDelayMillis(item.guid, testResult)
-                            updateListAction.value =  getPosition(item.guid)
+                            updateListAction.value = getPosition(item.guid)
                         }
                     }
                 }
@@ -133,7 +146,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             for (item in serversCache) {
                 val config = V2rayConfigUtil.getV2rayConfig(getApplication(), item.guid)
                 if (config.status) {
-                    MessageUtil.sendMsg2TestService(getApplication(), AppConfig.MSG_MEASURE_CONFIG, Pair(item.guid, config.content))
+                    MessageUtil.sendMsg2TestService(
+                        getApplication(),
+                        AppConfig.MSG_MEASURE_CONFIG,
+                        Pair(item.guid, config.content)
+                    )
                 }
             }
         }
@@ -143,7 +160,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         MessageUtil.sendMsg2Service(getApplication(), AppConfig.MSG_MEASURE_DELAY, "")
     }
 
-    fun filterConfig(context :Context) {
+    fun filterConfig(context: Context) {
         val subscriptions = MmkvManager.decodeSubscriptions()
         val listId = subscriptions.map { it.first }.toList().toMutableList()
         val listRemarks = subscriptions.map { it.second.remarks }.toList().toMutableList()
@@ -155,7 +172,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
         }
 
         val ivBinding = DialogConfigFilterBinding.inflate(LayoutInflater.from(context))
-        ivBinding.spSubscriptionId.adapter = ArrayAdapter<String>( context, android.R.layout.simple_spinner_dropdown_item, listRemarks)
+        ivBinding.spSubscriptionId.adapter = ArrayAdapter<String>(
+            context,
+            android.R.layout.simple_spinner_dropdown_item,
+            listRemarks
+        )
         ivBinding.spSubscriptionId.setSelection(checkedItem)
         ivBinding.etKeyword.text = Utils.getEditable(keywordFilter)
         val builder = AlertDialog.Builder(context).setView(ivBinding.root)
@@ -193,7 +214,7 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 //            }.show()
     }
 
-    fun getPosition(guid: String) : Int {
+    fun getPosition(guid: String): Int {
         serversCache.forEachIndexed { index, it ->
             if (it.guid == guid)
                 return index

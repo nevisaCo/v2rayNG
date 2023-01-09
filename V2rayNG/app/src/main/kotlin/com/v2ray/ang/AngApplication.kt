@@ -1,12 +1,14 @@
 package com.v2ray.ang
 
-import androidx.multidex.MultiDexApplication
+import android.content.Context
 import androidx.preference.PreferenceManager
+import co.dev.ApplicationLoader
 import com.tencent.mmkv.MMKV
 
-class AngApplication : MultiDexApplication() {
+class AngApplication : ApplicationLoader() {
     companion object {
         const val PREF_LAST_VERSION = "pref_last_version"
+        lateinit var appContext: Context
     }
 
     var firstRun = false
@@ -15,12 +17,15 @@ class AngApplication : MultiDexApplication() {
     override fun onCreate() {
         super.onCreate()
 
+        appContext = applicationContext;
+
 //        LeakCanary.install(this)
 
         val defaultSharedPreferences = PreferenceManager.getDefaultSharedPreferences(this)
         firstRun = defaultSharedPreferences.getInt(PREF_LAST_VERSION, 0) != BuildConfig.VERSION_CODE
         if (firstRun)
-            defaultSharedPreferences.edit().putInt(PREF_LAST_VERSION, BuildConfig.VERSION_CODE).apply()
+            defaultSharedPreferences.edit().putInt(PREF_LAST_VERSION, BuildConfig.VERSION_CODE)
+                .apply()
 
         //Logger.init().logLevel(if (BuildConfig.DEBUG) LogLevel.FULL else LogLevel.NONE)
         MMKV.initialize(this)

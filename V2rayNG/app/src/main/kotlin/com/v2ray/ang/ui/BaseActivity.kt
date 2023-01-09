@@ -3,11 +3,12 @@ package com.v2ray.ang.ui
 import android.content.Context
 import android.os.Build
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.MenuItem
 import androidx.annotation.RequiresApi
-import com.v2ray.ang.util.MyContextWrapper
+import androidx.appcompat.app.AppCompatActivity
+import androidx.appcompat.app.AppCompatDelegate
 import com.v2ray.ang.R
+import com.v2ray.ang.util.MyContextWrapper
 import com.v2ray.ang.util.Utils
 
 abstract class BaseActivity : AppCompatActivity() {
@@ -25,29 +26,16 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     private fun checkDarkMode() {
-        if (Utils.getDarkModeStatus(this)) {
-            if (this.javaClass.simpleName == "MainActivity") {
-                setTheme(R.style.AppThemeDark_NoActionBar)
-            } else {
-                setTheme(R.style.AppThemeDark)
-            }
-        } else {
-            if (this.javaClass.simpleName == "MainActivity") {
-                setTheme(R.style.AppThemeLight_NoActionBar)
-            } else {
-                setTheme(R.style.AppThemeLight)
-            }
-        }
+
     }
 
     @RequiresApi(Build.VERSION_CODES.N)
     override fun attachBaseContext(newBase: Context?) {
         val context = newBase?.let {
-            MyContextWrapper.wrap(newBase,  Utils.getLocale(newBase))
+            MyContextWrapper.wrap(newBase, Utils.getLocale(newBase))
         }
         super.attachBaseContext(context)
     }
-
 
 
 }

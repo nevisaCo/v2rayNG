@@ -1,2 +1,7 @@
 /build
 /google-services.json
+/afat
+/arm64
+/config/key.jks
+/config/private_key.pepk
+/arm7

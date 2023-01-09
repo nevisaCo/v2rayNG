@@ -46,6 +46,7 @@ object SpeedtestUtil {
             val command = "/system/bin/ping -c 3 $url"
             val process = Runtime.getRuntime().exec(command)
             val allText = process.inputStream.bufferedReader().use { it.readText() }
+            Log.i("qwert", "url: $url, ping: $allText")
             if (!TextUtils.isEmpty(allText)) {
                 val tempInfo = allText.substring(allText.indexOf("min/avg/max/mdev") + 19)
                 val temps = tempInfo.split("/".toRegex()).dropLastWhile { it.isEmpty() }.toTypedArray()

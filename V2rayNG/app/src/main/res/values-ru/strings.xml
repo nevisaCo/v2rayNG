@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <string name="app_name" translatable="false">v2rayNG</string>
     <string name="app_widget_name">Переключить</string>
     <string name="app_tile_name">Переключить</string>
     <string name="app_tile_first_use">Первое использование этой функции, пожалуйста, используйте приложение, чтобы добавить сервер</string>
@@ -50,7 +49,6 @@
     <string name="server_lab_path">Путь (WS/H2) / Ключ QUIC / Сид KCP / Сервис gRPC</string>
     <string name="server_lab_stream_security">TLS</string>
     <string name="server_lab_stream_fingerprint">uTLS</string>
-    <string name="server_lab_stream_alpn" translatable="false">alpn</string>
     <string name="server_lab_allow_insecure">Разрешать небезопасные</string>
     <string name="server_lab_sni">SNI</string>
     <string name="server_lab_address3">Адрес</string>

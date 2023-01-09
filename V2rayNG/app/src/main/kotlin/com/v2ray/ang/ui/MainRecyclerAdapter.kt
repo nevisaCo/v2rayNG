@@ -71,6 +71,7 @@ class MainRecyclerAdapter(val activity: MainActivity) : RecyclerView.Adapter<Mai
             } else {
                 holder.itemMainBinding.tvTestResult.setTextColor(ContextCompat.getColor(mActivity, R.color.colorPing))
             }
+
             if (guid == mainStorage?.decodeString(MmkvManager.KEY_SELECTED_SERVER)) {
                 holder.itemMainBinding.layoutIndicator.setBackgroundResource(R.color.colorSelected)
             } else {
@@ -97,6 +98,7 @@ class MainRecyclerAdapter(val activity: MainActivity) : RecyclerView.Adapter<Mai
                 }
             }
             holder.itemMainBinding.tvStatistics.text = "${outbound?.getServerAddress()} : ${outbound?.getServerPort()}"
+
 
             holder.itemMainBinding.layoutShare.setOnClickListener {
                 AlertDialog.Builder(mActivity).setItems(shareOptions.toTypedArray()) { _, i ->
