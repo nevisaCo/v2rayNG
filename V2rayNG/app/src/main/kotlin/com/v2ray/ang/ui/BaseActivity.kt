@@ -2,11 +2,9 @@ package com.v2ray.ang.ui
 
 import android.content.Context
 import android.os.Build
-import android.os.Bundle
 import android.view.MenuItem
 import androidx.annotation.RequiresApi
 import androidx.appcompat.app.AppCompatActivity
-import androidx.appcompat.app.AppCompatDelegate
 import com.v2ray.ang.R
 import com.v2ray.ang.util.MyContextWrapper
 import com.v2ray.ang.util.Utils
@@ -19,12 +17,6 @@ abstract class BaseActivity : AppCompatActivity() {
         }
         else -> super.onOptionsItemSelected(item)
     }
-
-    override fun onCreate(savedInstanceState: Bundle?) {
-        super.onCreate(savedInstanceState)
-        checkDarkMode()
-    }
-
     private fun checkDarkMode() {
         if (Utils.getDarkModeStatus(this)) {
             if (this.javaClass.simpleName == "MainActivity") {
@@ -40,7 +32,6 @@ abstract class BaseActivity : AppCompatActivity() {
             }
         }
     }
-
     @RequiresApi(Build.VERSION_CODES.N)
     override fun attachBaseContext(newBase: Context?) {
         val context = newBase?.let {
