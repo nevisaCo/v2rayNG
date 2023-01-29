@@ -1,5 +1,6 @@
 package com.v2ray.ang.dto
 
+import co.dev.models.Protocol
 import com.v2ray.ang.AppConfig.TAG_AGENT
 import com.v2ray.ang.AppConfig.TAG_BLOCKED
 import com.v2ray.ang.AppConfig.TAG_DIRECT
@@ -12,7 +13,8 @@ data class ServerConfig(
         val addedTime: Long = System.currentTimeMillis(),
         var remarks: String = "",
         val outboundBean: V2rayConfig.OutboundBean? = null,
-        var fullConfig: V2rayConfig? = null
+        var fullConfig: V2rayConfig? = null,
+        var customConfig: Protocol? = null
 ) {
     companion object {
         fun create(configType: EConfigType): ServerConfig {

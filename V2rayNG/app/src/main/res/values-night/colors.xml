@@ -15,4 +15,36 @@
     <color name="colorAccentTransparent">#4d12976F</color>
     <color name="colorBg">#252525</color>
     <color name="colorText">#CCCCCC</color>
+
+    <color name="secondaryText">#FFB1B1B1</color>
+    <color name="linkText">#FF2FA6F8</color>
+    <color name="icon">#555</color>
+    <color name="dark_blue_stroke">@color/dark_blue</color>
+    <color name="loginIcon">@color/light_blue</color>
+
+    <color name="purple_200">#FFBB86FC</color>
+    <color name="purple_500">#FF6200EE</color>
+    <color name="purple_700">#FF3700B3</color>
+    <color name="teal_200">#FF03DAC5</color>
+    <color name="teal_700">#FF018786</color>
+    <color name="black">#FF121212</color>
+    <color name="white">#FFF5F5F5</color>
+    <color name="blue_gray">#FF243B53</color>
+    <color name="light_blue">#FF2FA6F8</color>
+    <color name="dark_gray_tx">#FFB1B1B1</color>
+    <color name="very_dark_gray_tx">#FF909090</color>
+    <color name="dark_gray_50">#80B1B1B1</color>
+    <color name="dark_blue">#042B47</color>
+    <color name="light_gray">#FFF0F0F0</color>
+    <color name="dark_gray_fill">#FF3B3B3B</color>
+    <color name="white_text">#FFF5F5F5</color>
+    <color name="very_dark_gray">#252525</color>
+    <color name="yellow_tx">#FFFFd829</color>
+
+    <color name="logo1">#097E5B</color>
+    <color name="logo2">#083C2D</color>
+    <color name="logo3">#57C3A2</color>
+    <color name="logo4">#368870</color>
+    <color name="logo5">#1F8566</color>
+    <color name="logo6">#42AA8B</color>
 </resources>

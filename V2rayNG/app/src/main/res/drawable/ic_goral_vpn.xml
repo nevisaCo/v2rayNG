@@ -1,0 +1,64 @@
+<?xml version="1.0" encoding="utf-8"?>
+<vector xmlns:android="http://schemas.android.com/apk/res/android"
+    android:width="110dp"
+    android:height="199dp"
+    android:viewportWidth="110"
+    android:viewportHeight="199">
+    <path
+        android:fillColor="@color/colorAccent"
+        android:pathData="M29 84.5L0 50l16 59 18.5-10.5-5.5-14Z"/>
+    <path
+        android:fillColor="@color/colorAccent"
+        android:pathData="M110 50L86 78.5l-5 23c4.17 2.67 12.6 7.9 13 7.5 0.4-0.4 10.83-39.5 16-59Z"/>
+    <path
+        android:fillColor="@color/colorAccent"
+        android:pathData="M44 192.5l-2-6.5 13 7.5 13-7.5-2 6.5-11 6.5-11-6.5Z"/>
+    <path
+        android:fillColor="@color/colorAccent"
+        android:pathData="M30 168.5L24 147l-0.5-2 5 3 2.5 1.5 6.5 24-7.5-5Z"/>
+    <path
+        android:fillColor="@color/colorAccent"
+        android:pathData="M80 169l6-22.5 0.5-1-7 4.5-6 22.5L80 169Z"/>
+    <path
+        android:fillColor="@color/logo1"
+        android:pathData="M71.5 184.5l-16.5 10-16.5-10-9-33.5-13-7.5-8.5-33L48 87h14l40 23.5-8.5 33-13 7.5-9 33.5Z"/>
+    <path
+        android:fillColor="@color/logo2"
+        android:pathData="M24.5 120L8 110.5l4 15.5 16.5 9.5-4-15.5Z"/>
+    <path
+        android:fillColor="@color/logo2"
+        android:pathData="M85.5 120l16.5-9.5-4 15.5-16.5 9.5 4-15.5Z"/>
+    <path
+        android:fillColor="@color/logo3"
+        android:pathData="M55 118l-26-15 13.5 76 12.5 7.5 12.5-7.5L81 103l-26 15Z"/>
+    <path
+        android:fillColor="@color/colorAccent"
+        android:pathData="M12 2.5L8 0l4 21.5 6 3.5-6-22.5Z"/>
+    <path
+        android:fillColor="@color/logo4"
+        android:pathData="M21 26l-9-4.5L15.5 42 27 48.5 21 26Z"/>
+    <path
+        android:fillColor="@color/logo1"
+        android:pathData="M30 50l-14.5-8 4 21L36 73l-6-23Z"/>
+    <path
+        android:fillColor="@color/logo5"
+        android:pathData="M39 74.5L19.5 63 24 90l23 13.5-8-29Z"/>
+    <path
+        android:fillColor="@color/logo6"
+        android:pathData="M48.5 98L23 83.5l3 18 28 16L48.5 98Z"/>
+    <path
+        android:fillColor="@color/colorAccent"
+        android:pathData="M97.5 2.5l4-2.5-4 21.5-6 3.5 6-22.5Z"/>
+    <path
+        android:fillColor="@color/logo4"
+        android:pathData="M88.5 26l9-4.5L94 42l-11.5 6.5 6-22.5Z"/>
+    <path
+        android:fillColor="@color/logo1"
+        android:pathData="M79.5 50L94 42l-4 21-16.5 10 6-23Z"/>
+    <path
+        android:fillColor="@color/logo5"
+        android:pathData="M70.5 74.5L90 63l-4.5 27-23 13.5 8-29Z"/>
+    <path
+        android:fillColor="@color/logo6"
+        android:pathData="M61 98l25.5-14.5-3 18-27.5 16L61 98Z"/>
+</vector>

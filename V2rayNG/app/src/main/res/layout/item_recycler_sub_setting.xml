@@ -21,7 +21,7 @@
             android:background="?android:attr/selectableItemBackground"
             android:nextFocusRight="@+id/layout_edit"
             android:layout_width="match_parent"
-            android:layout_height="@dimen/server_height"
+            android:layout_height="@dimen/sub_item_height"
             android:layout_gravity="center"
             android:gravity="center"
             android:orientation="horizontal">
@@ -59,7 +59,7 @@
 
             <LinearLayout
                 android:layout_width="wrap_content"
-                android:layout_height="@dimen/server_height"
+                android:layout_height="match_parent"
                 android:gravity="center"
                 android:orientation="horizontal">
 

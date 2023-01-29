@@ -224,7 +224,10 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
 
     private val mMsgReceiver = object : BroadcastReceiver() {
         override fun onReceive(ctx: Context?, intent: Intent?) {
-            when (intent?.getIntExtra("key", 0)) {
+            val kay = intent?.getIntExtra("key", 0)
+            updateConnection.value = kay
+
+            when (kay) {
                 AppConfig.MSG_STATE_RUNNING -> {
                     isRunning.value = true
                 }
@@ -232,11 +235,11 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
                     isRunning.value = false
                 }
                 AppConfig.MSG_STATE_START_SUCCESS -> {
-                    getApplication<AngApplication>().toast(R.string.toast_services_success)
+//                    getApplication<AngApplication>().toast(R.string.toast_services_success)
                     isRunning.value = true
                 }
                 AppConfig.MSG_STATE_START_FAILURE -> {
-                    getApplication<AngApplication>().toast(R.string.toast_services_failure)
+//                    getApplication<AngApplication>().toast(R.string.toast_services_failure)
                     isRunning.value = false
                 }
                 AppConfig.MSG_STATE_STOP_SUCCESS -> {
@@ -253,4 +256,8 @@ class MainViewModel(application: Application) : AndroidViewModel(application) {
             }
         }
     }
+
+    //customized:
+    val updateConnection by lazy { MutableLiveData<Int>() }
+
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login">LOGIN</string>
+    <string name="create_account">Create account</string>
+    <string name="do_not_have_an_account">Do not have an account?</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forget_account">Forget Account?</string>
+    <string name="enter_user_name">Enter User Name</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="coin_error">Your diamonds are not enough to buy this server. You can increase your diamonds by watching promotional videos</string>
+    <string name="connection_stoped">Connection stopped!</string>
+    <string name="connection_start_fail">Connection fail!</string>
+    <string name="ping_complated">List ping completed.</string>
+    <string name="conecting">Connecting…</string>
+    <string name="diamond_not_title">Diamond deficit</string>
+    <string name="btn_accept_policy"><![CDATA[Accept & Continue]]></string>
+    <string name="policy_more_link_text">For more information please read our Terms of Service and Privacy Policy.</string>
+    <string name="policy_description">We strictly follow the policy of no use of time and data privacy laws and we do not collect any data including username, phone number, device ID, etc. and do not share it with anyone. Some of your activity is saved locally so you can customize the apps that use the VPN.</string>
+    <string name="privacy_and_policy">Privacy and policy</string>
+    <string name="delete_all_server_message">If confirmed, all your connections will be lost. are you sure</string>
+    <string name="delete_all_invalid_server_message">If confirmed, all your invalid connections will be lost. are you sure</string>
+    <string name="connection_timeout">Connection timeout!</string>
+    <string name="cancel">Cancel</string>
+
+</resources>

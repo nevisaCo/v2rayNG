@@ -7,9 +7,13 @@ import android.content.Intent
 import android.content.IntentFilter
 import android.graphics.Color
 import android.os.Build
+import android.os.Handler
+import android.os.Looper
 import android.util.Log
 import androidx.annotation.RequiresApi
 import androidx.core.app.NotificationCompat
+import co.dev.ApplicationLoader
+import co.dev.BuyController
 import com.tencent.mmkv.MMKV
 import com.v2ray.ang.AppConfig
 import com.v2ray.ang.AppConfig.ANG_PACKAGE
@@ -26,6 +30,7 @@ import com.v2ray.ang.util.V2rayConfigUtil
 import go.Seq
 import kotlinx.coroutines.Dispatchers
 import kotlinx.coroutines.GlobalScope
+import kotlinx.coroutines.delay
 import kotlinx.coroutines.launch
 import libv2ray.Libv2ray
 import libv2ray.V2RayPoint
@@ -33,6 +38,8 @@ import libv2ray.V2RayVPNServiceSupportsSet
 import rx.Observable
 import rx.Subscription
 import java.lang.ref.SoftReference
+import java.util.Timer
+import kotlin.concurrent.timerTask
 import kotlin.math.min
 
 object V2RayServiceManager {
@@ -134,6 +141,12 @@ object V2RayServiceManager {
         val service = serviceControl?.get()?.getService() ?: return
         val guid = mainStorage?.decodeString(MmkvManager.KEY_SELECTED_SERVER) ?: return
         val config = MmkvManager.decodeServerConfig(guid) ?: return
+
+        val r = BuyController.buy(config,null)
+        if (!r) {
+            return
+        }
+
         if (!v2rayPoint.isRunning) {
             val result = V2rayConfigUtil.getV2rayConfig(service, guid)
             if (!result.status)
@@ -159,12 +172,24 @@ object V2RayServiceManager {
                 Log.d(ANG_PACKAGE, e.toString())
             }
 
+
             if (v2rayPoint.isRunning) {
-                MessageUtil.sendMsg2UI(service, AppConfig.MSG_STATE_START_SUCCESS, "")
-                showNotification()
-            } else {
-                MessageUtil.sendMsg2UI(service, AppConfig.MSG_STATE_START_FAILURE, "")
-                cancelNotification()
+                GlobalScope.launch(Dispatchers.IO) {
+                    val time = try {
+                        v2rayPoint.measureDelay()
+                    } catch (e: Exception) {
+                        -1
+                    }
+
+                    if (time > 0) {
+                        MessageUtil.sendMsg2UI(service, AppConfig.MSG_STATE_START_SUCCESS, "")
+                        showNotification()
+                    } else {
+                        MessageUtil.sendMsg2UI(service, AppConfig.MSG_STATE_START_FAILURE, "")
+                        cancelNotification()
+                    }
+                }
+
             }
         }
     }
@@ -181,7 +206,6 @@ object V2RayServiceManager {
                 }
             }
         }
-
         MessageUtil.sendMsg2UI(service, AppConfig.MSG_STATE_STOP_SUCCESS, "")
         cancelNotification()
 
@@ -311,14 +335,18 @@ object V2RayServiceManager {
             .setContentIntent(contentPendingIntent)
             .addAction(
                 R.drawable.ic_close_grey_800_24dp,
-                        service.getString(R.string.notification_action_stop_v2ray),
+                service.getString(R.string.notification_action_stop_v2ray),
                 stopV2RayPendingIntent
             )
         //.build()
 
         //mBuilder?.setDefaults(NotificationCompat.FLAG_ONLY_ALERT_ONCE)  //取消震动,铃声其他都不好使
 
-        service.startForeground(NOTIFICATION_ID, mBuilder?.build())
+        try {
+            service.startForeground(NOTIFICATION_ID, mBuilder?.build())
+        } catch (e: Exception) {
+            Log.i("TAG", "showNotification: customOnCreate")
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.O)
@@ -435,5 +463,14 @@ object V2RayServiceManager {
             mSubscription = null
             updateNotification(currentConfig?.remarks, 0, 0)
         }
+    }
+
+
+    //customized:
+    private val globalStorage by lazy {
+        MMKV.mmkvWithID(
+            MmkvManager.KEY_GLOBAL,
+            MMKV.MULTI_PROCESS_MODE
+        )
     }
 }

@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="login">LOGIN</string>
+    <string name="create_account">Create account</string>
+    <string name="do_not_have_an_account">Do not have an account?</string>
+    <string name="remember_me">Remember me</string>
+    <string name="forget_account">Forget Account?</string>
+    <string name="enter_user_name">Enter User Name</string>
+    <string name="enter_password">Enter Password</string>
+    <string name="coin_error">سکه های شما برای خرید این سرور کافی نیست. میتوانید با دیدن ویدئو های تبلیغاتی سکه های خود را افزایش دهید</string>
+    <string name="connection_stoped">اتصال متوقف شد!</string>
+    <string name="connection_start_fail">اتصال ناموفق!</string>
+    <string name="ping_complated">پینگ انجام شد.</string>
+    <string name="conecting">در حال اتصال…</string>
+    <string name="diamond_not_title">کمبود الماس</string>
+    <string name="btn_accept_policy">میپذریم و ادامه میدم</string>
+    <string name="policy_more_link_text">مشاهده و مطالعه سیاست ها و محرمانگی.</string>
+    <string name="policy_description">ما به شدت از خط‌مشی عدم استفاده از زمان و قوانین مربوط به حفظ حریم خصوصی داده‌ها پیروی می‌کنیم و هیچ داده ای اعم از نام کاربری ، شماره تلفن ، شناسه دستگاه و … را جمع‌آوری نمی‌کنیم و به کسی به اشتراک نمیگذاریم. برخی فعالیت شما به صورت محلی ذخیره می شوند تا بتوانید برنامه هایی را که از VPN استفاده می کنند سفارشی کنید.</string>
+    <string name="privacy_and_policy">سیاست ها و حریم خصوصی</string>
+    <string name="delete_all_server_message">در صورت تایید همه اتصالات شما از بین خواهد رفت. آیا مطمئنید ؟</string>
+    <string name="delete_all_invalid_server_message">در صورت تایید همه اتصالات غیر معتبر شما از بین خواهد رفت. آیا مطمئنید ؟</string>
+    <string name="connection_timeout">پایان زمان اتصال!</string>
+    <string name="cancel">انصراف</string>
+
+</resources>

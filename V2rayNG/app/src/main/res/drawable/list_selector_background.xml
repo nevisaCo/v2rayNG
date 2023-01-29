@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:state_pressed="true" android:drawable="@drawable/btn_dark_blue_stroke"/> <!-- pressed -->
+    <item android:state_focused="true" android:drawable="@drawable/btn_focuse"/> <!-- focused -->
+    <item android:drawable="@drawable/btn_dark_blue"/> <!-- default -->
+</selector>
+<!--> ref <-->
+<!--> https://stackoverflow.com/questions/37477767/how-to-change-color-of-button-on-button-tap-in-android-studio <-->

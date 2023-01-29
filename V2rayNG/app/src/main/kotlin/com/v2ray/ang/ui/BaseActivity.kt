@@ -26,7 +26,19 @@ abstract class BaseActivity : AppCompatActivity() {
     }
 
     private fun checkDarkMode() {
-
+        if (Utils.getDarkModeStatus(this)) {
+            if (this.javaClass.simpleName == "MainActivity") {
+                setTheme(R.style.AppThemeDark_NoActionBar)
+            } else {
+                setTheme(R.style.AppThemeDark)
+            }
+        } else {
+            if (this.javaClass.simpleName == "MainActivity") {
+                setTheme(R.style.AppThemeLight_NoActionBar)
+            } else {
+                setTheme(R.style.AppThemeLight)
+            }
+        }
     }
 
     @RequiresApi(Build.VERSION_CODES.N)

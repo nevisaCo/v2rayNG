@@ -16,12 +16,17 @@
         <item name="colorOnSecondary">#4CAF50</item>
 
         <!-- Status bar color. -->
-        <item name="android:statusBarColor">?attr/iconTint</item>
+        <item name="android:statusBarColor">@color/colorPrimary</item>
+        <item name="android:windowLightStatusBar">true</item>
         <!-- Customize your theme here. -->
+        <item name="android:navigationBarColor">@color/colorPrimary</item>
+        <item name="android:navigationBarDividerColor">@color/colorPrimaryDark</item>
+
+
     </style>
 
-    <style name="AppThemeDark" parent="Theme.AppCompat.DayNight.DarkActionBar">
-
+    <style name="AppThemeDark" parent="AppThemeLight">
+        <item name="android:windowLightStatusBar">false</item>
     </style>
 
     <style name="AppThemeLight_NoActionBar" parent="AppThemeLight">
@@ -57,5 +62,153 @@
     <style name="AppTheme.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 
     <style name="AppTheme.PopupOverlay" parent="ThemeOverlay.AppCompat.Light" />
+
+
+    <style name="accept_button_text_light" parent="ShapeAppearanceOverlay.Material3.Button">
+        <!--        <item name="cornerSizeTopLeft">90%</item>-->
+        <item name="android:textColor">@color/white_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/btn_multi_items</item>
+    </style>
+
+    <style name="accept_button_text_dark">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/btn_blue</item>
+    </style>
+
+    <style name="accept_button_stroke_text_light">
+        <item name="android:textColor">@color/white_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/btn_stroke</item>
+    </style>
+
+    <style name="type_box_text_dark">
+        <item name="android:textColor">@color/very_dark_gray_tx</item>
+        <item name="android:gravity">center</item>
+        <item name="android:layout_width">0dp</item>
+        <item name="android:layout_height">50dp</item>
+        <item name="android:layout_marginTop">10dp</item>
+        <item name="android:textSize">16sp</item>
+        <item name="hintTextColor">@color/secondaryText</item>
+        <item name="android:background">@drawable/box_tx_dark_blue</item>
+
+    </style>
+
+    <style name="text_title_very_dark">
+        <item name="android:textColor">@color/very_dark_gray_tx</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_title_dark">
+        <item name="android:textColor">@color/dark_gray_tx</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="text_very_dark_10">
+        <item name="android:textColor">@color/very_dark_gray_tx</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="text_light_gray_10">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">10sp</item>
+    </style>
+
+    <style name="text_title_light">
+        <item name="android:textColor">@color/dark_gray_tx</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="sign_btn_gray">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:background">@drawable/btn_gray</item>
+    </style>
+
+    <style name="text_title_white">
+        <item name="android:textColor">@color/white_text</item>
+        <item name="android:gravity">center</item>
+        <item name="android:textSize">16sp</item>
+    </style>
+
+    <style name="ServerIcons">
+        <item name="android:layout_width">40dp</item>
+        <item name="android:layout_height">0dp</item>
+        <item name="android:background">?android:attr/selectableItemBackground</item>
+        <item name="android:clickable">true</item>
+        <item name="android:focusable">true</item>
+        <item name="android:gravity">center</item>
+        <item name="android:tint">?attr/colorMainText</item>
+        <item name="android:paddingStart">5dp</item>
+        <item name="android:paddingEnd">5dp</item>
+    </style>
+
+    <style name="ServerInfoText">
+        <item name="android:layout_width">wrap_content</item>
+        <item name="android:layout_height">wrap_content</item>
+        <item name="android:lines">1</item>
+        <item name="android:drawablePadding">2dp</item>
+        <item name="android:textSize">11sp</item>
+        <item name="android:gravity">center</item>
+        <item name="android:paddingStart">5dp</item>
+        <item name="android:paddingEnd">5dp</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:textAppearance">@style/TextAppearance.AppCompat.Small</item>
+    </style>
+
+    <style name="SocialIcon">
+        <item name="android:layout_height">@dimen/social_icon_h</item>
+        <item name="android:layout_width">@dimen/social_icon_h</item>
+        <item name="android:layout_marginBottom">5dp</item>
+        <item name="android:contentDescription">@string/app_name</item>
+    </style>
+
+    <style name="AlertDialogCustom" parent="Theme.AppCompat.Light.Dialog.Alert">
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:typeface">monospace</item>
+        <item name="android:textSize">14sp</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:textColorPrimary">@color/colorText</item>
+        <item name="android:background">@color/colorPrimaryDark</item>
+        <item name="buttonBarPositiveButtonStyle">@style/PositiveButtonStyle</item>
+        <item name="buttonBarNegativeButtonStyle">@style/NegativeButtonStyle</item>
+        <item name="buttonBarNeutralButtonStyle">@style/NeutralButtonStyle</item>
+        <item name="android:windowTitleStyle">@style/DialogTitle</item>
+        <item name="titleTextStyle">@color/colorAccent</item>
+    </style>
+
+    <style name="NegativeButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textSize">14sp</item>
+        <item name="android:textColor">@color/colorText</item>
+    </style>
+
+    <style name="PositiveButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textSize">16sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorAccent</item>
+        <item name="android:padding">2dp</item>
+    </style>
+
+    <style name="NeutralButtonStyle" parent="Widget.AppCompat.Button.ButtonBar.AlertDialog">
+        <item name="android:textStyle">bold</item>
+        <item name="android:textSize">16sp</item>
+        <item name="android:textColor">#4CAF50</item>
+    </style>
+
+    <style name="DialogTitle" parent="TextAppearance.AppCompat.Large">
+        <item name="android:textSize">18sp</item>
+        <item name="android:textStyle">bold</item>
+        <item name="android:textColor">@color/colorAccent</item>
+    </style>
 
 </resources>

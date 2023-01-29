@@ -6,10 +6,13 @@ import android.content.Intent
 import android.content.pm.PackageManager
 import android.net.*
 import android.os.Build
+import android.os.Handler
 import android.os.ParcelFileDescriptor
 import android.os.StrictMode
 import android.util.Log
 import androidx.annotation.RequiresApi
+import co.dev.ApplicationLoader
+import co.nevisa.commonlib.NotificationCenter
 import com.tencent.mmkv.MMKV
 import com.v2ray.ang.AppConfig
 import com.v2ray.ang.R

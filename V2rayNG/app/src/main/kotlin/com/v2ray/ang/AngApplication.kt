@@ -15,6 +15,7 @@ class AngApplication : ApplicationLoader() {
         private set
 
     override fun onCreate() {
+        MMKV.initialize(this)
         super.onCreate()
 
         appContext = applicationContext;
@@ -28,6 +29,5 @@ class AngApplication : ApplicationLoader() {
                 .apply()
 
         //Logger.init().logLevel(if (BuildConfig.DEBUG) LogLevel.FULL else LogLevel.NONE)
-        MMKV.initialize(this)
     }
 }

@@ -6,6 +6,7 @@ import android.text.TextUtils
 import android.view.View
 import androidx.activity.viewModels
 import androidx.preference.*
+import co.nevisa.commonlib.NotificationCenter
 import com.v2ray.ang.AppConfig
 import com.v2ray.ang.R
 import com.v2ray.ang.util.Utils
@@ -23,6 +24,8 @@ class SettingsActivity : BaseActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         settingsViewModel.startListenPreferenceChange()
+
+        NotificationCenter.getInstance().postNotificationName(0)
     }
 
     class SettingsFragment : PreferenceFragmentCompat() {

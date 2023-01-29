@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<selector xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:drawable="@drawable/btn_stroke" android:state_pressed="true" /> <!-- pressed -->
+    <item android:drawable="@drawable/btn_blue" android:state_enabled="true" /> <!-- focused -->
+    <item android:drawable="@drawable/btn_gray" android:state_enabled="false" /> <!-- focused -->
+    <item android:drawable="@drawable/btn_blue" /> <!-- default -->
+</selector>

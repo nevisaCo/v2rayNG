@@ -4,6 +4,7 @@ import com.google.gson.Gson
 import com.tencent.mmkv.MMKV
 import com.v2ray.ang.dto.ServerAffiliationInfo
 import com.v2ray.ang.dto.ServerConfig
+import com.v2ray.ang.dto.ServersCache
 import com.v2ray.ang.dto.SubscriptionItem
 
 object MmkvManager {
@@ -15,6 +16,7 @@ object MmkvManager {
     const val ID_SETTING = "SETTING"
     const val KEY_SELECTED_SERVER = "SELECTED_SERVER"
     const val KEY_ANG_CONFIGS = "ANG_CONFIGS"
+    const val KEY_GLOBAL = "GLOBAL"
 
     private val mainStorage by lazy { MMKV.mmkvWithID(ID_MAIN, MMKV.MULTI_PROCESS_MODE) }
     private val serverStorage by lazy { MMKV.mmkvWithID(ID_SERVER_CONFIG, MMKV.MULTI_PROCESS_MODE) }
@@ -67,6 +69,23 @@ object MmkvManager {
         mainStorage?.encode(KEY_ANG_CONFIGS, Gson().toJson(serverList))
         serverStorage?.remove(guid)
         serverAffStorage?.remove(guid)
+    }
+
+    //customized:
+    fun updateServer(servers: List<ServersCache>) {
+        if (servers.isEmpty()) {
+            return
+        }
+        val serverList = decodeServerList()
+        servers.forEach {
+            if (mainStorage?.decodeString(KEY_SELECTED_SERVER) == it.guid) {
+                mainStorage?.remove(KEY_SELECTED_SERVER)
+            }
+            serverList.remove(it.guid)
+            serverStorage?.remove(it.guid)
+            serverAffStorage?.remove(it.guid)
+        }
+        mainStorage?.encode(KEY_ANG_CONFIGS, Gson().toJson(serverList))
     }
 
     fun removeServerViaSubid(subid: String) {
@@ -158,7 +177,7 @@ object MmkvManager {
         }
     }
 
-    fun sortByTestResults( ) {
+    fun sortByTestResults() {
         data class ServerDelay(var guid: String, var testDelayMillis: Long)
 
         val serverDelays = mutableListOf<ServerDelay>()

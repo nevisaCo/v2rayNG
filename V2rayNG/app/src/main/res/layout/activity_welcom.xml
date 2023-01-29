@@ -1,0 +1,59 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context="co.dev.WelcomeActivity">
+
+    <ImageView
+        android:id="@+id/ic_logo"
+        android:layout_width="0dp"
+        android:layout_height="150dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias=".3"
+        app:srcCompat="@drawable/ic_goral_vpn" />
+
+    <TextView
+        android:id="@+id/tx_goral_vpn"
+        style="@style/text_title_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="20dp"
+        android:textColor="@color/colorAccent"
+        android:text="@string/app_name"
+        android:textStyle="bold"
+        android:textSize="30sp"
+        app:layout_constraintEnd_toEndOf="@+id/ic_logo"
+        app:layout_constraintStart_toStartOf="@+id/ic_logo"
+        app:layout_constraintTop_toBottomOf="@+id/ic_logo" />
+
+    <ImageView
+        android:id="@+id/imgWorld"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        android:src="@drawable/btn_tap_connected"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tx_goral_vpn"
+        android:contentDescription="@string/app_name" />
+
+<!--    <ImageView
+        android:id="@+id/imgBg"
+        android:layout_width="0dp"
+        android:alpha=".3" android:visibility="invisible"
+        android:scaleType="fitXY"
+        app:srcCompat="@drawable/welcome_screen_bottom"
+        android:layout_height="250dp"
+        android:contentDescription="@string/app_name"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imgWorld"
+        app:layout_constraintVertical_bias="1.0" />-->
+</androidx.constraintlayout.widget.ConstraintLayout>

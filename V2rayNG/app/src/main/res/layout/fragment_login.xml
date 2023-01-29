@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <ImageView
+        android:id="@+id/ic_logo"
+        android:layout_width="match_parent"
+        android:layout_height="200dp"
+        android:layout_marginTop="50dp"
+        android:contentDescription="@string/login"
+        android:padding="25dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ic_goral_vpn" />
+
+    <TextView
+        android:id="@+id/tx_goral_vpn"
+        style="@style/text_title_dark"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="@string/app_name"
+        android:textColor="@color/colorText"
+        android:textSize="25sp"
+        app:layout_constraintEnd_toEndOf="@+id/ic_logo"
+        app:layout_constraintStart_toStartOf="@+id/ic_logo"
+        app:layout_constraintTop_toBottomOf="@+id/ic_logo" />
+
+    <EditText
+        android:id="@+id/txtUserName"
+        style="@style/type_box_text_dark"
+        android:layout_marginStart="40dp"
+        android:layout_marginTop="30dp"
+        android:layout_marginEnd="40dp"
+        android:autofillHints="password"
+        android:drawableStart="@drawable/ic_dashboard"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/loginIcon"
+        android:ems="10"
+        android:gravity="center_vertical|start"
+        android:hint="@string/enter_user_name"
+        android:inputType="textPersonName"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tx_goral_vpn" />
+
+    <EditText
+        android:id="@+id/txtPassword"
+        style="@style/type_box_text_dark"
+        android:autofillHints=""
+        android:drawableStart="@drawable/ic_dashboard"
+        android:drawablePadding="10dp"
+        android:drawableTint="@color/loginIcon"
+        android:ems="10"
+        android:gravity="center_vertical|start"
+        android:hint="@string/enter_password"
+        android:inputType="textPassword"
+        android:paddingStart="10dp"
+        app:layout_constraintEnd_toEndOf="@+id/txtUserName"
+        app:layout_constraintStart_toStartOf="@+id/txtUserName"
+        app:layout_constraintTop_toBottomOf="@+id/txtUserName" />
+
+    <CheckBox
+        android:id="@+id/chkRemember"
+        style="@style/text_light_gray_10"
+        android:layout_width="wrap_content"
+        android:layout_height="23dp"
+        android:layout_marginTop="10dp"
+        android:gravity="start|center_vertical"
+        android:text="@string/remember_me"
+        android:textColor="@color/secondaryText"
+        app:layout_constraintStart_toStartOf="@+id/txtPassword"
+        app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
+
+    <TextView
+        android:id="@+id/txtForget"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:text="@string/forget_account"
+        android:textColor="@color/linkText"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/chkRemember"
+        app:layout_constraintEnd_toEndOf="@+id/txtPassword"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/chkRemember"
+        app:layout_constraintTop_toBottomOf="@+id/txtPassword" />
+
+
+    <Button
+        android:id="@+id/btnLogin"
+        style="@style/accept_button_text_light"
+        android:layout_width="0dp"
+        android:layout_height="50dp"
+        android:layout_marginTop="20dp"
+        android:text="@string/login"
+
+        app:backgroundTint="@null"
+        app:layout_constraintBottom_toTopOf="@+id/textView7"
+        app:layout_constraintEnd_toEndOf="@+id/txtUserName"
+        app:layout_constraintStart_toStartOf="@+id/txtUserName"
+        app:layout_constraintTop_toBottomOf="@+id/chkRemember" />
+
+
+    <TextView
+        android:id="@+id/textView7"
+        android:layout_width="wrap_content"
+        android:layout_height="15dp"
+        android:layout_marginStart="5dp"
+        android:layout_marginTop="5dp"
+        android:text="@string/do_not_have_an_account"
+        android:textColor="@color/secondaryText"
+        android:textSize="11sp"
+        app:layout_constraintStart_toStartOf="@+id/btnLogin"
+        app:layout_constraintTop_toBottomOf="@+id/btnLogin" />
+
+    <TextView
+        android:id="@+id/textView8"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:paddingStart="3dp"
+        android:paddingEnd="3dp"
+        android:text="@string/create_account"
+        android:textColor="@color/linkText"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="@+id/textView7"
+        app:layout_constraintStart_toEndOf="@+id/textView7"
+        app:layout_constraintTop_toTopOf="@+id/textView7" />
+
+    <TextView
+        android:id="@+id/txtVersion"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="10dp"
+        android:layout_marginBottom="30dp"
+        android:gravity="center"
+        android:text="Version: 1.2.0"
+        android:textColor="@color/secondaryText"
+        android:textSize="11sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView7" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
