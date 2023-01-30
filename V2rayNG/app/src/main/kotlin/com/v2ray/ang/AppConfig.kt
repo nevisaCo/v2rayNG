@@ -28,6 +28,7 @@ object AppConfig {
     const val PREF_SOCKS_PORT = "pref_socks_port"
     const val PREF_HTTP_PORT = "pref_http_port"
     const val PREF_LOGLEVEL = "pref_core_loglevel"
+    const val PREF_LOGCAT = "pref_core_logcat"
     const val PREF_LANGUAGE = "pref_language"
     const val PREF_PREFER_IPV6 = "pref_prefer_ipv6"
     const val PREF_ROUTING_DOMAIN_STRATEGY = "pref_routing_domain_strategy"

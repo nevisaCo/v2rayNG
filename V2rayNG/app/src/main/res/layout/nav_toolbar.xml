@@ -11,3 +11,4 @@
         app:layout_scrollFlags="scroll|enterAlways" />
 
 </com.google.android.material.appbar.AppBarLayout>
+

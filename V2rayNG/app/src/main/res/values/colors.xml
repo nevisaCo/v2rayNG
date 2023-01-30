@@ -20,6 +20,8 @@
     <color name="dark_blue_stroke">@color/colorAccent</color>
     <color name="loginIcon">@color/colorAccent</color>
 
+    <color name="navigationBarColor">@color/colorPrimary</color>
+
 
     <color name="purple_200">#FFBB86FC</color>
     <color name="purple_500">#FF6200EE</color>

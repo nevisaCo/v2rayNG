@@ -1,40 +1,41 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="AppThemeLight" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
+    <style name="AppThemeDayNight" parent="Theme.MaterialComponents.DayNight.DarkActionBar">
         <item name="colorPrimary">@color/colorPrimary</item>
         <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
         <item name="colorAccent">@color/colorAccent</item>
+
         <item name="colorMainBg">@color/colorBg</item>
         <item name="colorMainText">@color/colorText</item>
 
         <!-- Primary brand color. -->
-        <item name="colorPrimaryVariant">@color/colorPrimary</item>
-        <item name="colorOnPrimary">#000000</item>
+<!--        <item name="colorPrimaryVariant">@color/colorPrimary</item>-->
+<!--        <item name="colorOnPrimary">#000000</item>-->
         <!-- Secondary brand color. -->
-        <item name="colorSecondary">#673AB7</item>
+<!--        <item name="colorSecondary">#673AB7</item>
         <item name="colorSecondaryVariant">#4CAF50</item>
-        <item name="colorOnSecondary">#4CAF50</item>
+        <item name="colorOnSecondary">#4CAF50</item>-->
+
 
         <!-- Status bar color. -->
         <item name="android:statusBarColor">@color/colorPrimary</item>
-        <item name="android:windowLightStatusBar">true</item>
-        <!-- Customize your theme here. -->
-        <item name="android:navigationBarColor">@color/colorPrimary</item>
-        <item name="android:navigationBarDividerColor">@color/colorPrimaryDark</item>
+        <item name="android:windowLightStatusBar" tools:targetApi="m">true</item>
+        <!--action bar style is here-->
+        <item name="actionBarTheme">@style/ActionBar.TitleTextStyle</item>
+        <item name="android:actionMenuTextColor">@color/colorText</item>
+
+        <!-- Customize your navigation bar here. -->
+        <item name="android:navigationBarColor">@color/navigationBarColor</item>
+        <item name="android:navigationBarDividerColor" tools:targetApi="o_mr1">@color/colorPrimaryDark</item>
+        <item name="android:windowLightNavigationBar" tools:targetApi="o_mr1">true</item>
 
 
+
+        <item name="android:alertDialogTheme">@style/AlertDialogCustom</item>
     </style>
 
-    <style name="AppThemeDark" parent="AppThemeLight">
-        <item name="android:windowLightStatusBar">false</item>
-    </style>
 
-    <style name="AppThemeLight_NoActionBar" parent="AppThemeLight">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
-
-    <style name="AppThemeDark_NoActionBar" parent="AppThemeDark">
+    <style name="AppThemeDayNight.NoActionBar" parent="AppThemeDayNight">
         <item name="windowActionBar">false</item>
         <item name="windowNoTitle">true</item>
     </style>
@@ -211,4 +212,13 @@
         <item name="android:textColor">@color/colorAccent</item>
     </style>
 
+<!--    <style name="ActionBarStyle" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
+        <item name="android:titleTextStyle">@style/ActionBar.TitleTextStyle</item>
+    </style>-->
+
+    <style name="ActionBar.TitleTextStyle" parent="ThemeOverlay.MaterialComponents.Dark.ActionBar">
+        <item name="android:textColor">@color/colorText</item>
+        <item name="android:color">@color/colorText</item>
+        <item name="android:textColorPrimary">@color/colorText</item>
+    </style>
 </resources>

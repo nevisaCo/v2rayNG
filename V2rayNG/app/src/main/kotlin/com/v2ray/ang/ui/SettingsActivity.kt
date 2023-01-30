@@ -6,7 +6,6 @@ import android.text.TextUtils
 import android.view.View
 import androidx.activity.viewModels
 import androidx.preference.*
-import co.nevisa.commonlib.NotificationCenter
 import com.v2ray.ang.AppConfig
 import com.v2ray.ang.R
 import com.v2ray.ang.util.Utils
@@ -24,8 +23,6 @@ class SettingsActivity : BaseActivity() {
         supportActionBar?.setDisplayHomeAsUpEnabled(true)
 
         settingsViewModel.startListenPreferenceChange()
-
-        NotificationCenter.getInstance().postNotificationName(0)
     }
 
     class SettingsFragment : PreferenceFragmentCompat() {
@@ -45,6 +42,8 @@ class SettingsActivity : BaseActivity() {
 //        val tgGroup: Preference by lazy { findPreference(PREF_TG_GROUP) }
 
         private val mode by lazy { findPreference<ListPreference>(AppConfig.PREF_MODE) }
+
+        private val logcat by lazy { findPreference<Preference>(AppConfig.PREF_LOGCAT) }
 
         override fun onCreatePreferences(bundle: Bundle?, s: String?) {
             addPreferencesFromResource(R.xml.pref_settings)
@@ -124,6 +123,11 @@ class SettingsActivity : BaseActivity() {
             }
             mode?.dialogLayoutResource = R.layout.preference_with_help_link
             //loglevel.summary = "LogLevel"
+
+            logcat?.setOnPreferenceClickListener {
+                startActivity(Intent(activity, LogcatActivity::class.java))
+                false
+            }
         }
 
         override fun onStart() {

@@ -352,7 +352,7 @@ object V2RayServiceManager {
     @RequiresApi(Build.VERSION_CODES.O)
     private fun createNotificationChannel(): String {
         val channelId = "RAY_NG_M_CH_ID"
-        val channelName = "V2rayNG Background Service"
+        val channelName = "vpn Background Service"
         val chan = NotificationChannel(
             channelId,
             channelName, NotificationManager.IMPORTANCE_HIGH

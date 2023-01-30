@@ -786,11 +786,14 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             R.id.feedback -> {
                 Utils.openUri(this, AppConfig.v2rayNGIssues)
             }
+
+            R.id.apps -> {
+                startActivity(Intent(this, PerAppProxyActivity::class.java))
+            }
+
             R.id.promotion -> {
-                Utils.openUri(
-                    this,
-                    "${Utils.decode(AppConfig.promotionUrl)}?t=${System.currentTimeMillis()}"
-                )
+                doShare(shareUrl
+                    ?: ("https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID))
             }
             R.id.logcat -> {
                 startActivity(Intent(this, LogcatActivity::class.java))
@@ -845,7 +848,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 AppConfig.MSG_STATE_STOP_SUCCESS -> {
                     decreaseServerUsage()
                     stopChronometer()
-                    binding.tvTestState.text = getString(R.string.connection_stoped)
+                    binding.tvTestState.text = getString(R.string.connection_stopped)
                     binding.tvTestState.setTextColor(Color.YELLOW)
 
                     AdmobController.getInstance().showInterstitial("disconnect")
@@ -856,7 +859,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                     binding.tvTestState.setTextColor(Color.RED)
                 }
                 AppConfig.MSG_MEASURE_DELAY_SUCCESS -> {
-                    binding.tvTestState.text = getString(R.string.ping_complated)
+                    binding.tvTestState.text = getString(R.string.ping_completed)
                     binding.tvTestState.setTextColor(Color.GREEN)
                 }
                 else -> {
@@ -920,7 +923,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         chronometer.base = t0
     }
 
-
+    var shareUrl: String? = null
     private fun initSocialMedia() {
         try {
             val json = GlobalStorage.socialMedia()
@@ -953,6 +956,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
             binding.socialMediaShare.visibility = getSocialVisibility(social.share)
             binding.socialMediaShare.setOnClickListener { doShare(social.share) }
+            shareUrl = social.share
         } catch (e: Exception) {
             Log.e(TAG, "initSocialMedia: ", e)
         }
@@ -1436,7 +1440,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 job = null
             }
         }
-        setTestState(getString(R.string.conecting))
+        setTestState(getString(R.string.connecting))
 
     }
 
