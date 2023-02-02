@@ -339,7 +339,7 @@ object Utils {
 
     fun urlDecode(url: String): String {
         return try {
-            URLDecoder.decode(URLDecoder.decode(url), "utf-8")
+            URLDecoder.decode(URLDecoder.decode(url,"utf-8"), "utf-8")
         } catch (e: Exception) {
             e.printStackTrace()
             url
@@ -426,7 +426,7 @@ object Utils {
         }
     }
 
-    fun getLocale(context: Context): Locale =
+    fun getLocale(): Locale =
         when (settingsStorage?.decodeString(AppConfig.PREF_LANGUAGE) ?: "auto") {
             "auto" -> getSysLocale()
             "en" -> Locale("en")
@@ -435,6 +435,7 @@ object Utils {
             "vi" -> Locale("vi")
             "ru" -> Locale("ru")
             "fa" -> Locale("fa")
+            "ar" -> Locale("ar")
             else -> getSysLocale()
         }
 

@@ -1238,7 +1238,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
                 val s = Cryptography.get(it.value, "key_${it.id}")
                 it.value = ""
                 importBatchConfig(s, "", it)
-                Log.i(TAG, "onSuccess:hash: $s")
+//                Log.i(TAG, "onSuccess:hash: $s")
             }
             mainViewModel.reloadServerList()
         } catch (e: Exception) {

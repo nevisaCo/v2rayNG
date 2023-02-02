@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+    <string name="login">تسجيل الدخول</string>
+    <string name="create_account">إنشاء حساب</string>
+    <string name="do_not_have_an_account">لا تملك حساب؟</string>
+    <string name="remember_me">تذكرنى</string>
+    <string name="forget_account">نسيت الحساب؟</string>
+    <string name="enter_user_name">ادخل اسم المستخدم</string>
+    <string name="enter_password">أدخل كلمة المرور</string>
+    <string name="coin_error">الماس الخاص بك لا يكفي لشراء هذا الخادم. يمكنك زيادة الماس الخاص بك عن طريق مشاهدة أشرطة الفيديو الترويجية</string>
+    <string name="connection_stopped">توقف الاتصال!</string>
+    <string name="connection_start_fail">فشل الاتصال!</string>
+    <string name="ping_completed">اكتملت قائمة ping.</string>
+    <string name="connecting">توصيل…</string>
+    <string name="diamond_not_title">عجز الماس</string>
+    <string name="btn_accept_policy">قبول و متابعة</string>
+    <string name="policy_more_link_text">لمزيد من المعلومات ، يرجى قراءة شروط الخدمة وسياسة الخصوصية الخاصة بنا.</string>
+    <string name="policy_description">نحن نتبع بصرامة سياسة عدم استخدام الوقت وقوانين خصوصية البيانات ولا نجمع أي بيانات بما في ذلك اسم المستخدم ورقم الهاتف ومعرف الجهاز وما إلى ذلك ولا نشاركها مع أي شخص. يتم حفظ بعض أنشطتك محليًا حتى تتمكن من تخصيص التطبيقات التي تستخدم VPN.</string>
+    <string name="privacy_and_policy">الخصوصية والسياسة</string>
+    <string name="delete_all_server_message">إذا تم التأكيد ، ستفقد جميع اتصالاتك. هل أنت واثق</string>
+    <string name="delete_all_invalid_server_message">إذا تم التأكيد ، ستفقد جميع اتصالاتك غير الصالحة. هل أنت واثق</string>
+    <string name="connection_timeout">انتهى وقت محاولة الاتصال!</string>
+    <string name="cancel">يلغي</string>
+    <string name = "setting_logcat_info"> إظهار سجل التطبيق </string>
+</resources>

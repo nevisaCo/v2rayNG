@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+    <string name="login">登錄</string>
+    <string name="create_account">創建賬戶</string>
+    <string name="do_not_have_an_account">還沒有賬號？</string>
+    <string name="remember_me">記住賬號</string>
+    <string name="forget_account">忘記帳號？</string>
+    <string name="enter_user_name">輸入用戶名</string>
+    <string name="enter_password">輸入密碼</string>
+    <string name="coin_error">你的鑽石不夠買這個服務器。 您可以通過觀看宣傳視頻來增加您的鑽石</string>
+    <string name="connection_stopped">連接停止！</string>
+    <string name="connection_start_fail">連接失敗！</string>
+    <string name="ping_completed">列表 ping 完成。</string>
+    <string name="connecting">連接中…</string>
+    <string name="diamond_not_title">鑽石赤字</string>
+    <string name="btn_accept_policy"><![CDATA[接受並繼續]]></string>
+    <string name="policy_more_link_text">如需更多信息，請閱讀我們的服務條款和隱私政策。</string>
+    <string name="policy_description">我們嚴格遵守不使用時間和數據隱私法的政策，我們不收集任何數據，包括用戶名、電話號碼、設備 ID 等，也不與任何人共享。 您的一些活動保存在本地，因此您可以自定義使用 VPN 的應用程序。</string>
+    <string name="privacy_and_policy">隱私和政策</string>
+    <string name="delete_all_server_message">如果確認，您的所有連接都將丟失。 你確定嗎</string>
+    <string name="delete_all_invalid_server_message">如果確認，您所有的無效連接都將丟失。 你確定嗎</string>
+    <string name="connection_timeout">連接超時！</string>
+    <string name="cancel">取消</string>
+    <string name="setting_logcat_info">顯示應用日誌</string>
+</resources>

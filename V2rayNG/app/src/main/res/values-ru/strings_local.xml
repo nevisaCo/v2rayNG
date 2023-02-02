@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+    <string name="login">АВТОРИЗОВАТЬСЯ</string>
+    <string name="create_account">Регистрация</string>
+    <string name="do_not_have_an_account">Еще не регистрировались?</string>
+    <string name="remember_me">Запомните меня</string>
+    <string name="forget_account">Забыть учетную запись?</string>
+    <string name="enter_user_name">Введите имя пользователя</string>
+    <string name="enter_password">Введите пароль</string>
+    <string name="coin_error">Ваших бриллиантов недостаточно, чтобы купить этот сервер. Вы можете увеличить свои бриллианты, просматривая рекламные ролики</string>
+    <string name="connection_stopped">Соединение остановлено!</string>
+    <string name="connection_start_fail">Ошибка подключения!</string>
+    <string name="ping_completed">Пинг списка завершен.</string>
+    <string name="connecting">Подключение…</string>
+    <string name="diamond_not_title">Алмазный дефицит</string>
+    <string name="btn_accept_policy"><![CDATA[Принять и продолжить]]></string>
+    <string name="policy_more_link_text">Для получения дополнительной информации ознакомьтесь с нашими Условиями обслуживания и Политикой конфиденциальности.</string>
+    <string name="policy_description">Мы строго следуем политике неиспользования времени и законам о конфиденциальности данных, мы не собираем никаких данных, включая имя пользователя, номер телефона, идентификатор устройства и т. д., и никому не передаем их. Часть вашей активности сохраняется локально, поэтому вы можете настроить приложения, использующие VPN.</string>
+    <string name="privacy_and_policy">Конфиденциальность и политика</string>
+    <string name="delete_all_server_message">В случае подтверждения все ваши соединения будут потеряны. уверены ли вы</string>
+    <string name="delete_all_invalid_server_message">В случае подтверждения все ваши недействительные соединения будут потеряны. уверены ли вы</string>
+    <string name="connection_timeout">Время соединения вышло!</string>
+    <string name="cancel">Отмена</string>
+    <string name="setting_logcat_info">показать logcat приложения</string>
+</resources>

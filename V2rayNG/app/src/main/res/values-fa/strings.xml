@@ -199,7 +199,6 @@
     <string name="connection_test_error_status_code">کد خطا: #%d</string>
     <string name="connection_connected">متصل است، برای بررسی اتصال ضربه بزنید</string>
     <string name="connection_not_connected">متصل نیست</string>
-    <string name="setting_logcat_info">show the app logcat</string>
 
     <string-array name="share_method">
         <item>QRcode</item>

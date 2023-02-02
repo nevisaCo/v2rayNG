@@ -21,5 +21,6 @@
     <string name="delete_all_invalid_server_message">If confirmed, all your invalid connections will be lost. are you sure</string>
     <string name="connection_timeout">Connection timeout!</string>
     <string name="cancel">Cancel</string>
+    <string name="setting_logcat_info">show the app logcat</string>
 
 </resources>

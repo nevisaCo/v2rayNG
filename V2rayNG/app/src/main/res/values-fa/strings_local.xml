@@ -21,4 +21,5 @@
     <string name="delete_all_invalid_server_message">در صورت تایید همه اتصالات غیر معتبر شما از بین خواهد رفت. آیا مطمئنید ؟</string>
     <string name="connection_timeout">پایان زمان اتصال!</string>
     <string name="cancel">انصراف</string>
+    <string name="setting_logcat_info">نمایش لاگ های برنامه</string>
 </resources>

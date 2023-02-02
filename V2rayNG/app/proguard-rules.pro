@@ -78,8 +78,8 @@
 #-optimizations !code/simplification/arithmetic,!field/*,!class/merging/*,!code/allocation/variable
 #-keepattributes *Annotation*
 
-#-keep class libv2ray.** { *; }
-#-keep class go.Seq.** { *; }
+-keep class libv2ray.** { *; }
+-keep class go.Seq.** { *; }
 
 
 #========================<mmkv>==========================

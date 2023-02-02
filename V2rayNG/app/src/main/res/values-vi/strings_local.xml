@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources >
+    <string name="login">ĐĂNG NHẬP</string>
+    <string name="create_account">Tạo tài khoản</string>
+    <string name="do_not_have_an_account">Không có tài khoản?</string>
+    <string name="remember_me">nhớ tôi</string>
+    <string name="forget_account">Quên tài khoản?</string>
+    <string name="enter_user_name">Điền tên đăng nhập</string>
+    <string name="enter_password">Nhập mật khẩu</string>
+    <string name="coin_error">Kim cương của bạn không đủ để mua máy chủ này. Bạn có thể tăng số kim cương của mình bằng cách xem các video quảng cáo</string>
+    <string name="connection_stopped">Đã dừng kết nối!</string>
+    <string name="connection_start_fail">Kết nối thất bại!</string>
+    <string name="ping_completed">Danh sách ping hoàn thành.</string>
+    <string name="connecting">Đang kết nối…</string>
+    <string name="diamond_not_title">thâm hụt kim cương</string>
+    <string name="btn_accept_policy"><![CDATA[Chấp nhận và tiếp tục]]></string>
+    <string name="policy_more_link_text">Để biết thêm thông tin, vui lòng đọc Điều khoản dịch vụ và Chính sách quyền riêng tư của chúng tôi.</string>
+    <string name="policy_description">Chúng tôi tuân thủ nghiêm ngặt chính sách không sử dụng thời gian và luật bảo mật dữ liệu và chúng tôi không thu thập bất kỳ dữ liệu nào bao gồm tên người dùng, số điện thoại, ID thiết bị, v.v. và không chia sẻ dữ liệu đó với bất kỳ ai. Một số hoạt động của bạn được lưu cục bộ để bạn có thể tùy chỉnh các ứng dụng sử dụng VPN.</string>
+    <string name="privacy_and_policy">Quyền riêng tư và chính sách</string>
+    <string name="delete_all_server_message">Nếu được xác nhận, tất cả các kết nối của bạn sẽ bị mất. bạn có chắc không</string>
+    <string name="delete_all_invalid_server_message">Nếu được xác nhận, tất cả các kết nối không hợp lệ của bạn sẽ bị mất. bạn có chắc không</string>
+    <string name="connection_timeout">Hết thời gian kết nối!</string>
+    <string name="cancel">Hủy bỏ</string>
+    <string name="setting_logcat_info">hiển thị logcat của ứng dụng</string>
+</resources>
