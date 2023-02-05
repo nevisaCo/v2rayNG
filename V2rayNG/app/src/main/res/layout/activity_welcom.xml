@@ -16,7 +16,7 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:layout_constraintVertical_bias=".3"
-        app:srcCompat="@drawable/ic_goral_vpn" />
+        app:srcCompat="@drawable/ic_intro_logo" />
 
     <TextView
         android:id="@+id/tx_goral_vpn"
@@ -24,10 +24,10 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="20dp"
-        android:textColor="@color/colorAccent"
         android:text="@string/app_name"
-        android:textStyle="bold"
+        android:textColor="@color/colorAccent"
         android:textSize="30sp"
+        android:textStyle="bold"
         app:layout_constraintEnd_toEndOf="@+id/ic_logo"
         app:layout_constraintStart_toStartOf="@+id/ic_logo"
         app:layout_constraintTop_toBottomOf="@+id/ic_logo" />
@@ -37,23 +37,24 @@
         android:layout_width="40dp"
         android:layout_height="40dp"
         android:layout_marginTop="20dp"
-        android:src="@drawable/btn_tap_connected"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tx_goral_vpn"
-        android:contentDescription="@string/app_name" />
-
-<!--    <ImageView
-        android:id="@+id/imgBg"
-        android:layout_width="0dp"
-        android:alpha=".3" android:visibility="invisible"
-        android:scaleType="fitXY"
-        app:srcCompat="@drawable/welcome_screen_bottom"
-        android:layout_height="250dp"
         android:contentDescription="@string/app_name"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:src="@drawable/btn_tap_connected"
+        android:visibility="gone"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/imgWorld"
-        app:layout_constraintVertical_bias="1.0" />-->
+        app:layout_constraintTop_toBottomOf="@+id/tx_goral_vpn" />
+
+    <!--    <ImageView
+            android:id="@+id/imgBg"
+            android:layout_width="0dp"
+            android:alpha=".3" android:visibility="invisible"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/welcome_screen_bottom"
+            android:layout_height="250dp"
+            android:contentDescription="@string/app_name"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imgWorld"
+            app:layout_constraintVertical_bias="1.0" />-->
 </androidx.constraintlayout.widget.ConstraintLayout>

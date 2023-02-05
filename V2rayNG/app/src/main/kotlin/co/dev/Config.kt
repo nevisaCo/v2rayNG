@@ -8,11 +8,14 @@ import java.util.ArrayList
 
 
 object Config {
-    var PROTOCOLS_LIST: ArrayList<Protocol> = ArrayList<Protocol>() ;
+    var PROTOCOLS_LIST: ArrayList<Protocol> = ArrayList<Protocol>();
 
     val URL: String = GlobalStorage.apiUrl()
     val TAG: String = "v2rayvpn"
     val DEBUG_VERSION: Boolean = BuildConfig.DEBUG_VERSION
+    val FULL_VERSION: Boolean = BuildConfig.APPLICATION_ID.contains("goral")
+
+    //Api
     val API: String = URL + "/api/"
     val PROTOCOLS: String = API + "protocols"
     val PROTOCOLS_USAGE: String = API + "protocols"

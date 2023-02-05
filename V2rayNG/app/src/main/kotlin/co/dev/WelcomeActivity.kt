@@ -4,6 +4,7 @@ import android.content.Intent
 import android.net.Uri
 import android.os.Bundle
 import android.util.Log
+import android.view.View
 import android.view.animation.LinearInterpolator
 import android.widget.Button
 import android.widget.ImageView
@@ -37,7 +38,12 @@ class WelcomeActivity : BaseActivity() {
         if (seenPrivacy) {
             startActivity()
             setContentView(R.layout.activity_welcom)
+
+
             val imageButton = findViewById<ImageView>(R.id.imgWorld)
+            if (Config.FULL_VERSION) {
+                imageButton.visibility = View.VISIBLE
+            }
             anim = animate(imageButton)
                 .rotation(360 * 5F)
                 .duration(1000 * 20)
@@ -89,7 +95,7 @@ class WelcomeActivity : BaseActivity() {
     }
 
     private fun getData() {
-        val cache = CacheItem("servers", Calendar.MINUTE, 15)
+        val cache = CacheItem("servers", Calendar.MINUTE, GlobalStorage.serverCacheTime())
         VolleyHelper.getInstance()
             .apply(
                 VolleyHelper.GET,

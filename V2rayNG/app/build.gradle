@@ -40,6 +40,8 @@ android {
         buildConfigField "String", "API_URL", API_URL
         buildConfigField "String", "PRIVACY_URL", PRIVACY_URL
 
+        vectorDrawables.useSupportLibrary = true
+
     }
 
     bundle {

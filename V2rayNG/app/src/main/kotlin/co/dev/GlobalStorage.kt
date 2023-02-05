@@ -133,4 +133,12 @@ object GlobalStorage {
         return globalStorage?.decodeInt("oldProtocolId", 0) ?: 0
     }
 
+    fun serverCacheTime(id: Int) {
+        globalStorage?.encode("serverCacheTime", id)
+    }
+
+    fun serverCacheTime(): Int {
+        return globalStorage?.decodeInt("serverCacheTime", 0) ?: 0
+    }
+
 }

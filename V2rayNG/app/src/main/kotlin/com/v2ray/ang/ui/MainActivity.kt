@@ -25,6 +25,7 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ShareCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
+import androidx.core.view.marginStart
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -792,8 +793,10 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             }
 
             R.id.promotion -> {
-                doShare(shareUrl
-                    ?: ("https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID))
+                doShare(
+                    shareUrl
+                        ?: ("https://play.google.com/store/apps/details?id=" + BuildConfig.APPLICATION_ID)
+                )
             }
             R.id.logcat -> {
                 startActivity(Intent(this, LogcatActivity::class.java))
@@ -887,6 +890,9 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     private fun initCoins() {
+/*        if (!Config.FULL_VERSION) {
+            return
+        }*/
         binding.txtCoins.setOnClickListener {
             menuRewardItem.callOnClick()
         }
@@ -1183,6 +1189,10 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
     var animWorldConnected: ViewAnimator? = null
     private fun startWorldAnimation() {
+        if (!Config.FULL_VERSION){
+            return
+        }
+
         animWorldConnected?.cancel()
         animWorldConnected = animate(binding.imgWorld)
             .rotation(360 * 2F)
@@ -1212,7 +1222,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             return
         }
 
-        val cache = CacheItem("servers", Calendar.MINUTE, 15)
+        val cache = CacheItem("servers", Calendar.MINUTE, GlobalStorage.serverCacheTime())
         VolleyHelper.getInstance()
             .apply(
                 VolleyHelper.GET,

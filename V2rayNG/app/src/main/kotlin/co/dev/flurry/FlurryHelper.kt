@@ -37,6 +37,8 @@ class FlurryHelper : IFlurryCallback {
 
         GlobalStorage.sponsor(flurryConfig.getString("sponsor", ""))
 
+        GlobalStorage.serverCacheTime(flurryConfig.getInt("server_cache_time", 0))
+
         val servers = flurryConfig.getString("servers", "")
         servers.replace(" ", "\n").split('\n').forEach {
             AngConfigManager.importBatchConfig(

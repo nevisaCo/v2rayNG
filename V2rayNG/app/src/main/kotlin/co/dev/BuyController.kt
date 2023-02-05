@@ -15,6 +15,9 @@ object BuyController {
     }
 
     fun buy(config: ServerConfig, iBuyCallback: IBuyCallback?): Boolean {
+/*        if (!Config.FULL_VERSION){
+            return true;
+        }*/
         val price = config.customConfig?.price ?: 0
         val serverId = config.customConfig?.serverId ?: 0
 

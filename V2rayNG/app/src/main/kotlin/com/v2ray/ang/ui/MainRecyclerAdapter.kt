@@ -78,21 +78,21 @@ class MainRecyclerAdapter(activity: MainActivity) :
                 val sc: ServersCache = items[position] as ServersCache
                 val guid = sc.guid
                 val config = sc.config
-    //            //filter
-    //            if (mActivity.mainViewModel.subscriptionId.isNotEmpty()
-    //                && mActivity.mainViewModel.subscriptionId != config.subscriptionId
-    //            ) {
-    //                holder.itemMainBinding.cardView.visibility = View.GONE
-    //            } else {
-    //                holder.itemMainBinding.cardView.visibility = View.VISIBLE
-    //            }
+                //            //filter
+                //            if (mActivity.mainViewModel.subscriptionId.isNotEmpty()
+                //                && mActivity.mainViewModel.subscriptionId != config.subscriptionId
+                //            ) {
+                //                holder.itemMainBinding.cardView.visibility = View.GONE
+                //            } else {
+                //                holder.itemMainBinding.cardView.visibility = View.VISIBLE
+                //            }
 
                 val outbound = config.getProxyOutbound()
                 val aff = MmkvManager.decodeServerAffiliationInfo(guid)
-    //            U+1F1EE U+1F1F3
+                //            U+1F1EE U+1F1F3
                 holder.itemMainBinding.tvName.text =
                     getCountryFlag("U+1F1EE U+1F1F3") + config.remarks
-    //            holder.itemView.setBackgroundColor(Color.TRANSPARENT)
+                //            holder.itemView.setBackgroundColor(Color.TRANSPARENT)
                 holder.itemMainBinding.txtPingResult.text = aff?.getTestDelayString() ?: ""
                 if ((aff?.testDelayMillis ?: 0L) < 0L) {
                     holder.itemMainBinding.txtPingResult.setTextColor(
@@ -155,7 +155,8 @@ class MainRecyclerAdapter(activity: MainActivity) :
                                                 guid
                                             )
                                         )
-                                        AlertDialog.Builder(mActivity).setView(ivBinding.root).show()
+                                        AlertDialog.Builder(mActivity).setView(ivBinding.root)
+                                            .show()
                                     }
                                 }
                                 1 -> {
@@ -185,7 +186,12 @@ class MainRecyclerAdapter(activity: MainActivity) :
                             )
                         )
                     } else {
-                        mActivity.startActivity(intent.setClass(mActivity, ServerActivity::class.java))
+                        mActivity.startActivity(
+                            intent.setClass(
+                                mActivity,
+                                ServerActivity::class.java
+                            )
+                        )
                     }
                 }
 
@@ -266,7 +272,7 @@ class MainRecyclerAdapter(activity: MainActivity) :
                 nativeAdView.setAdd(ad)
             }
         } catch (e: Exception) {
-            Log.e(TAG, "onBindViewHolder>>>>>>>>>>>>: ",e )
+            Log.e(TAG, "onBindViewHolder>>>>>>>>>>>>: ", e)
         }
     }
 
@@ -286,7 +292,7 @@ class MainRecyclerAdapter(activity: MainActivity) :
             }
             result
         } catch (e: Exception) {
-           ""
+            ""
         }
         Log.i(TAG, "getCountryFlag: $a")
         return a
@@ -469,6 +475,8 @@ class MainRecyclerAdapter(activity: MainActivity) :
         if (cc == null) {
             return
         }
+
+//        if (Config.FULL_VERSION){
         holder.itemMainBinding.txtUsage.visibility = View.VISIBLE
         holder.itemMainBinding.txtPrice.visibility = View.VISIBLE
 
@@ -489,6 +497,8 @@ class MainRecyclerAdapter(activity: MainActivity) :
                 )
             )
         }
+//        }
+
 
         holder.itemMainBinding.txtUsage.text = "${cc.usage}"
 

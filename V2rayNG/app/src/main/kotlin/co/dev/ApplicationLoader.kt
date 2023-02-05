@@ -3,19 +3,15 @@ package co.dev
 import android.annotation.SuppressLint
 import android.content.Context
 import android.provider.Settings
-import android.provider.UserDictionary.Words
 import android.util.Log
-import androidx.lifecycle.MutableLiveData
 import co.dev.flurry.FlurryHelper
 import co.nevisa.commonlib.ApplicationLoader
-import co.nevisa.commonlib.NotificationCenter
-import co.nevisa.commonlib.admob.AdmobBaseClass
+import co.nevisa.commonlib.BuildVars
 import co.nevisa.commonlib.config.AdConfig
 import co.nevisa.commonlib.config.BaseConfig
 import co.nevisa.commonlib.config.VolleyConfig
-import co.nevisa.commonlib.utils.Cryptography
-import co.nevisa.commonlib.volley.ILoginNeedCallback
 import co.nevisa.commonlib.volley.VolleyHelper
+import com.google.firebase.messaging.FirebaseMessaging
 import com.v2ray.ang.BuildConfig.*
 import com.v2ray.ang.R
 import java.security.MessageDigest
@@ -88,6 +84,12 @@ open class ApplicationLoader : ApplicationLoader() {
 
         VolleyHelper.setVolleyConfig(volleyConfig);
 
+        try {
+            FirebaseMessaging.getInstance().subscribeToTopic("all")
+            if (BuildVars.DEBUG_VERSION) FirebaseMessaging.getInstance().subscribeToTopic("debug")
+        } catch (e: Exception) {
+            e.printStackTrace()
+        }
     }
 
     fun md5(s: String): String {
