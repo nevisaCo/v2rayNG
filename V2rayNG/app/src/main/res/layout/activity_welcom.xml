@@ -32,6 +32,8 @@
         app:layout_constraintStart_toStartOf="@+id/ic_logo"
         app:layout_constraintTop_toBottomOf="@+id/ic_logo" />
 
+
+
     <ImageView
         android:id="@+id/imgWorld"
         android:layout_width="40dp"
@@ -39,22 +41,17 @@
         android:layout_marginTop="20dp"
         android:contentDescription="@string/app_name"
         android:src="@drawable/btn_tap_connected"
-        android:visibility="gone"
+        android:visibility="invisible"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tx_goral_vpn" />
 
-    <!--    <ImageView
-            android:id="@+id/imgBg"
-            android:layout_width="0dp"
-            android:alpha=".3" android:visibility="invisible"
-            android:scaleType="fitXY"
-            app:srcCompat="@drawable/welcome_screen_bottom"
-            android:layout_height="250dp"
-            android:contentDescription="@string/app_name"
-            app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imgWorld"
-            app:layout_constraintVertical_bias="1.0" />-->
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginTop="20dp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tx_goral_vpn" />
 </androidx.constraintlayout.widget.ConstraintLayout>

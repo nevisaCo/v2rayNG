@@ -29,7 +29,7 @@ android {
         targetSdkVersion Integer.parseInt("$targetSdkVer")
         multiDexEnabled true
         versionCode code
-        versionName "1.2.1"
+        versionName "1.2.3"
 
         manifestPlaceholders = [
                 admobAppId     : ADMOB_APPLICATION_ID,
@@ -94,6 +94,7 @@ android {
             signingConfig signingConfigs.release
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
             buildConfigField 'Boolean', 'DEBUG_VERSION', "false"
+            manifestPlaceholders = [usesCleartextTraffic:"false"]
         }
         debug {
             debuggable true
@@ -103,6 +104,8 @@ android {
             signingConfig signingConfigs.release
             buildConfigField 'Boolean', 'DEBUG_VERSION', "true"
             applicationIdSuffix ".debug"
+            manifestPlaceholders = [usesCleartextTraffic:"true"]
+
         }
     }
 
@@ -224,7 +227,7 @@ dependencies {
     implementation 'com.google.firebase:firebase-messaging'
     implementation 'com.google.firebase:firebase-crashlytics-ktx'
     implementation 'com.google.firebase:firebase-analytics-ktx'
-    implementation 'com.google.android.gms:play-services-ads:21.4.0'
+    implementation 'com.google.android.gms:play-services-ads:20.6.0'
 
     implementation 'com.flurry.android:analytics:14.0.0@aar'
 
@@ -232,8 +235,8 @@ dependencies {
 
     implementation 'com.makeramen:roundedimageview:2.3.0'
 
+    //google play in-app auto update
     implementation 'com.google.android.play:app-update:2.0.1'
-//google play in-app auto update
 
     implementation 'com.squareup.picasso:picasso:2.71828'
 }

@@ -46,7 +46,7 @@ open class ApplicationLoader : ApplicationLoader() {
         }
 
         val adConfig = AdConfig();
-        adConfig.isPreServe = false
+        adConfig.isPreServe = true
         adConfig.isTestDevice = DEBUG_VERSION;
         adConfig.testDeviceIds = s
         adConfig.retryOnFail = 2;

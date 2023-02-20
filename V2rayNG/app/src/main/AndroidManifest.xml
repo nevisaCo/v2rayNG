@@ -32,8 +32,8 @@
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
         android:supportsRtl="true"
+        android:usesCleartextTraffic="${usesCleartextTraffic}"
         android:theme="@style/AppThemeDayNight"
-        android:usesCleartextTraffic="true"
         tools:targetApi="m">
         <activity
             android:name="co.dev.WelcomeActivity"

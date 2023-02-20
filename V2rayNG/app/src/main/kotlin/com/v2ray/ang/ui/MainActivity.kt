@@ -4,6 +4,8 @@ import android.Manifest
 import android.annotation.SuppressLint
 import android.content.ActivityNotFoundException
 import android.content.Intent
+import android.content.pm.ApplicationInfo
+import android.content.pm.PackageManager
 import android.content.res.ColorStateList
 import android.graphics.Color
 import android.net.Uri
@@ -25,7 +27,6 @@ import androidx.appcompat.app.AlertDialog
 import androidx.core.app.ShareCompat
 import androidx.core.content.ContextCompat
 import androidx.core.view.GravityCompat
-import androidx.core.view.marginStart
 import androidx.lifecycle.lifecycleScope
 import androidx.recyclerview.widget.ItemTouchHelper
 import androidx.recyclerview.widget.LinearLayoutManager
@@ -81,7 +82,6 @@ import java.io.File
 import java.io.FileOutputStream
 import java.util.*
 import java.util.concurrent.TimeUnit
-import kotlin.collections.ArrayList
 
 class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedListener {
     private lateinit var binding: ActivityMainBinding
@@ -238,7 +238,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             if (result != null) {
                 launch(Dispatchers.Main) {
                     if (result) {
-                        toast(getString(R.string.migration_success))
+//                        toast(getString(R.string.migration_success))
                         mainViewModel.reloadServerList()
                     } else {
                         toast(getString(R.string.migration_fail))
@@ -355,11 +355,7 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             }
 
             R.id.export_all -> {
-                if (AngConfigManager.shareNonCustomConfigsToClipboard(
-                        this,
-                        mainViewModel.serverList
-                    ) == 0
-                ) {
+                if (AngConfigManager.shareNonCustomConfigsToClipboard(this,mainViewModel.serverList) == 0                ) {
                     toast(R.string.toast_success)
                 } else {
                     toast(R.string.toast_failure)
@@ -499,10 +495,8 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
         subid: String = "",
         customConfig: Protocol?
     ) {
-        val subid2 = if (subid.isEmpty()) {
+        val subid2 = subid.ifEmpty {
             mainViewModel.subscriptionId
-        } else {
-            subid
         }
         val append = subid.isEmpty()
 
@@ -516,7 +510,9 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
             )
         }
         if (count > 0) {
-            toast(R.string.toast_success)
+            if  (BuildConfig.DEBUG_VERSION || customConfig==null){
+                toast(R.string.toast_success)
+            }
             mainViewModel.reloadServerList()
         } else {
             toast(R.string.toast_failure)
@@ -820,7 +816,8 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
 
         initAdmob()
 
-        initAppUpdate()
+
+       initAppUpdate()
 
 
         GlobalStorage.deviceId(
@@ -1257,6 +1254,15 @@ class MainActivity : BaseActivity(), NavigationView.OnNavigationItemSelectedList
     }
 
     private fun initAdmob() {
+
+        val ai: ApplicationInfo = packageManager.getApplicationInfo(packageName, PackageManager.GET_META_DATA)
+        val bundle = ai.metaData
+        val myApiKey = bundle.getString("com.google.android.gms.ads.APPLICATION_ID")
+
+        ai.metaData.putString("com.google.android.gms.ads.APPLICATION_ID",AdmobController.getInstance().keys.getApp_id())
+
+        Log.i(TAG, "initAdmob: old:$myApiKey , new : ${ bundle.getString("com.google.android.gms.ads.APPLICATION_ID")}")
+
         val callback = object : IInitializeCallback {
             override fun before() {
                 if (Config.DEBUG_VERSION) {

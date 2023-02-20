@@ -47,7 +47,5 @@ class FlurryHelper : IFlurryCallback {
                 true
             )
         }
-
-
     }
 }

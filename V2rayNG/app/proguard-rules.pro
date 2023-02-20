@@ -59,7 +59,7 @@
 
 
 #========================<nevisa lib>==========================
--keep class co.nevisa.commonlib.admob.models.models.** { *; }
+-keep class co.nevisa.commonlib.admob.models.** { *; }
 -keep class co.nevisa.commonlib.firebase.models.firebase.models.** { *; }
 
 #========================<App>==========================

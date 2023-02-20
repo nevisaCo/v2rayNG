@@ -67,6 +67,7 @@
         android:layout_width="0dp"
         android:layout_height="wrap_content"
         android:background="@drawable/btn_blue"
+        android:enabled="false"
         android:gravity="center"
         android:text="@string/btn_accept_policy"
         android:textColor="@color/white_text"
@@ -76,4 +77,14 @@
         app:layout_constraintEnd_toEndOf="@+id/textView2"
         app:layout_constraintStart_toStartOf="@+id/textView2"
         app:layout_constraintTop_toBottomOf="@+id/txtMore" />
+
+    <ProgressBar
+        android:id="@+id/progressBar"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:layout_constraintBottom_toBottomOf="@+id/btnAccept"
+        app:layout_constraintEnd_toEndOf="@+id/btnAccept"
+        app:layout_constraintStart_toStartOf="@+id/btnAccept"
+        app:layout_constraintTop_toTopOf="@+id/btnAccept" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

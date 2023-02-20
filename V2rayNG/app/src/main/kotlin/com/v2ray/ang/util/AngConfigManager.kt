@@ -590,7 +590,7 @@ object AngConfigManager {
             val config = MmkvManager.decodeServerConfig(guid) ?: return ""
 
             //customized:user cannot share public servers
-            if (config.customConfig == null) {
+            if (config.customConfig != null) {
                 return ""
             }
 
@@ -775,14 +775,14 @@ object AngConfigManager {
                 sb.append(url)
                 sb.appendLine()
             }
-            if (sb.count() > 0) {
+            if (sb.isNotEmpty()) {
                 Utils.setClipboard(context, sb.toString())
+                return 0
             }
         } catch (e: Exception) {
             e.printStackTrace()
-            return -1
         }
-        return 0
+        return -1
     }
 
     /**
